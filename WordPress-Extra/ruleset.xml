@@ -36,9 +36,14 @@
 	<!-- https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards/pull/382#discussion_r29970107 -->
 	<!--<rule ref="Generic.Formatting.MultipleStatementAlignment"/>-->
 
-	<!-- Hook callbacks may not use all params -->
-	<!-- https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards/pull/382#discussion_r29981655 -->
-	<!--<rule ref="Generic.CodeAnalysis.UnusedFunctionParameter"/>-->
+	<!-- Check that functions use all parameters passed.
+		 https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards/pull/xxx -->
+	<rule ref="Generic.CodeAnalysis.UnusedFunctionParameter">
+		<properties>
+			<property name="ignore_extended_classes" value="true" />
+			<property name="allow_for_callbacks" value="true" />
+		</properties>
+	</rule>
 
 	<rule ref="WordPress-Core"/>
 
